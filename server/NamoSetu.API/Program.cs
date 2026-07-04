@@ -34,6 +34,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 // Register Services
 builder.Services.AddScoped<JwtHelper>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<TempleService>();
 
 // Controllers
 builder.Services.AddControllers();
@@ -57,5 +58,12 @@ app.UseCors("AllowAngular");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+// Seed temple data
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await NamoSetu.API.Data.Seeders.TempleSeeder.SeedAsync(db);
+}
 
 app.Run();

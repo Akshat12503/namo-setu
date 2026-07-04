@@ -35,7 +35,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddScoped<JwtHelper>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<TempleService>();
-
+// Gemini AI Service
+builder.Services.AddHttpClient<GeminiService>();
+builder.Services.AddScoped<GeminiService>();
 // Controllers
 builder.Services.AddControllers();
 

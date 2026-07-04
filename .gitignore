@@ -1,0 +1,17 @@
+# Angular
+client/namo-setu-web/node_modules/
+client/namo-setu-web/.angular/
+client/namo-setu-web/dist/
+
+# .NET
+server/**/bin/
+server/**/obj/
+server/**/*.user
+
+# Environment / Secrets
+appsettings.Development.json
+*.env
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="NamoSetu.API/NamoSetu.API.csproj" />
+  <Project Path="NamoSetu.Tests/NamoSetu.Tests.csproj" />
+</Solution>
